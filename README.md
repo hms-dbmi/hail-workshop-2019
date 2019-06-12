@@ -38,22 +38,25 @@ Please note that the production release is [`version 0.2`](<https://hail.is/docs
 Execute the following commands in your terminal:
 
 ```
-## Install Conda; https://docs.anaconda.com/anaconda/install/mac-os/
+## Install Conda 
+
 cd ~/Desktop
 git clone https://github.com/hms-dbmi/hail-workshop-2019.git
 cd hail-workshop-2019
 wget https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
+
+# If you don't have wget install it by running "brew install wget" or manually download from: https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
+
 sh Anaconda3-2019.03-MacOSX-x86_64.sh
 
 # Follow the instructions 
 # For the question “Do you wish the installer to initialize Anaconda3 by running conda init?” We recommend “yes”.
 
 rm Anaconda3-2019.03-MacOSX-x86_64.sh
-
 conda create --name hail python=3.7
 conda activate hail
-python -m pip install hail
 python -V # Make sure it's Python 3.7.3
+python -m pip install hail
 python -m pip install jupyterlab
 cd ~/Desktop/hail-workshop-2019/notebooks
 conda activate hail
