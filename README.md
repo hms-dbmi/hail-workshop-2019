@@ -1,4 +1,4 @@
-# Precision Medicine 2019: Hail workshop material
+# i2b2tranSMART Foundation Harvard Symposium 2019: *Hail workshop material*
 
 <img src="https://github.com/hms-dbmi/hail-workshop-2019/blob/master/images/workshop-cover.png" height="450">
 
