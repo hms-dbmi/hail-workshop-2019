@@ -49,9 +49,15 @@ wget https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
 sh Anaconda3-2019.03-MacOSX-x86_64.sh
 
 # Follow the instructions 
-# For the question “Do you wish the installer to initialize Anaconda3 by running conda init?” We recommend “yes”.
+# For the question "Do you wish the installer to initialize Anaconda3 by running conda init?" We recommend "yes".
 
 rm Anaconda3-2019.03-MacOSX-x86_64.sh
+
+# Java 1.8 JDK has to be installed at this point: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html (You need to create an account)
+
+java -version
+
+source ~/.bash_profile
 
 # Hail environment with Python 3.7 and Jupyter Lab
 
@@ -59,6 +65,7 @@ conda create --name hail python=3.7
 conda activate hail
 python -V # Make sure it's Python 3.7.3
 python -m pip install hail
+python -m pip install ipywidgets
 python -m pip install jupyterlab
 
 # Run Jupyter Lab
