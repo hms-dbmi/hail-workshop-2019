@@ -33,14 +33,13 @@ Please note that the production release is [`version 0.2`](<https://hail.is/docs
 
 ## Tools
 
-### Local installation in MAC
+### Local installation in MAC using the command line
 
 Execute the following commands in your terminal:
 
 ```
 ## Install Conda 
-
-cd ~/Desktop
+cd ~/Desktop # or your path of preference
 git clone https://github.com/hms-dbmi/hail-workshop-2019.git
 cd hail-workshop-2019
 wget https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
@@ -53,16 +52,50 @@ sh Anaconda3-2019.03-MacOSX-x86_64.sh
 # For the question “Do you wish the installer to initialize Anaconda3 by running conda init?” We recommend “yes”.
 
 rm Anaconda3-2019.03-MacOSX-x86_64.sh
+
+# Hail environment with Python 3.7 and Jupyter Lab
+
 conda create --name hail python=3.7
 conda activate hail
 python -V # Make sure it's Python 3.7.3
 python -m pip install hail
 python -m pip install jupyterlab
-cd ~/Desktop/hail-workshop-2019/notebooks
+
+# Run Jupyter Lab
+
+HOSTDIR=$(pwd)
+cd $HOSTDIR/notebooks
 conda activate hail
 jupyter lab # The path where this command is executed is automatically selected as the HOME directory
 ```
 
+### Local installation using DOCKER
+
+Make sure you have Docker installed. OTW [Click HERE for installation instructions](<https://docs.docker.com/v17.12/install/>).
+
+Once Docker is installed and running, execute the following commands in your terminal:
+
+```
+cd ~/Desktop # or your path of preference
+git clone https://github.com/hms-dbmi/hail-workshop-2019.git
+cd hail-workshop-2019/hail_docker
+
+# Build image 
+sudo docker build . --tag hail
+
+# Run docker in the local host
+HOSTDIR=$(pwd | sed 's/\/hail_docker$//g')
+sudo docker run -p 127.0.0.1:8888:8888 -d -v $HOSTDIR/notebooks:/notebooks --name hail hail --mount
+```
+
+Once the container is running, open a new browser window and type `localhost:8888`, then Jupyter Lab should run. All the work you do will be saved in the `notebooks` folder.
+
+Make sure you have disk space for the installation: 
+
+| Repository | Size |
+|:----------|:----:|
+| hail |	2.42GB |
+| miniconda3 | 457MB |
 
 
 ###  Deploy clusters and install `Hail` in cloud services 
