@@ -10,6 +10,7 @@ RUN apt-get update \
 # Make sure it's Python 3.7.3
 RUN python -V
 RUN python -m pip install hail
+RUN python -m pip install ipywidgets
 RUN python -m pip install jupyterlab
 ADD ./start.sh /start.sh
 RUN conda init bash
