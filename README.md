@@ -72,7 +72,6 @@ python -m pip install jupyterlab
 
 HOSTDIR=$(pwd)
 cd $HOSTDIR/notebooks
-conda activate hail
 jupyter lab # The path where this command is executed is automatically selected as the HOME directory
 ```
 
