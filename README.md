@@ -44,6 +44,9 @@ git clone https://github.com/hms-dbmi/hail-workshop-2019.git
 cd hail-workshop-2019
 wget https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
 
+# For a lighter installation you can use Miniconda instead: 
+# https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+
 # If you don't have wget install it by running "brew install wget" or manually download from: https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
 
 sh Anaconda3-2019.03-MacOSX-x86_64.sh
