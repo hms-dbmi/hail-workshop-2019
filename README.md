@@ -44,10 +44,10 @@ git clone https://github.com/hms-dbmi/hail-workshop-2019.git
 cd hail-workshop-2019
 wget https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
 
+# If you don't have wget install it by running "brew install wget" or manually download from: https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
+
 # For a lighter installation you can use Miniconda instead: 
 # https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
-
-# If you don't have wget install it by running "brew install wget" or manually download from: https://repo.anaconda.com/archive/Anaconda3-2019.03-MacOSX-x86_64.sh
 
 sh Anaconda3-2019.03-MacOSX-x86_64.sh
 
@@ -56,26 +56,27 @@ sh Anaconda3-2019.03-MacOSX-x86_64.sh
 
 rm Anaconda3-2019.03-MacOSX-x86_64.sh
 
-# Java 1.8 JDK has to be installed at this point: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html (You need to create an account)
-
+# Check if Java 1.8 JDK is installed. If it is not, go to: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html > Java SE 8 JDK > Accept the license > Mac OS X x64 (.dmg)
 java -version
 
-source ~/.bash_profile
+# After java is installed source your profile
+source ~/.bash_profile # For bash 
+source ~/.zshrc # For Zsh
 
-# Hail environment with Python 3.7 and Jupyter Lab
-
+# Create Hail environment with Python 3.7 and Jupyter Lab
 conda create --name hail python=3.7
 conda activate hail
-python -V # Make sure it's Python 3.7.3
+python -V # Make sure it's Python 3.7 - python 2 is not compatible!
 python -m pip install hail
 python -m pip install ipywidgets
 python -m pip install jupyterlab
 
 # Run Jupyter Lab
-
 HOSTDIR=$(pwd)
+mkdir -p $HOSTDIR/notebooks
 cd $HOSTDIR/notebooks
 jupyter lab # The path where this command is executed is automatically selected as the HOME directory
+# jupyter lab should automatically run in your browser as: http://localhost:8888
 ```
 
 ### Local installation using DOCKER
@@ -121,4 +122,3 @@ The following tools will help you spining clusters in both Google and AWS:
 **Cloud computing**: he practice of using a network of remote servers hosted on the Internet to store, manage, and process data, rather than a local server or a personal computer
 
 **Cluster**: collection of computers that work together to analyse data
-
