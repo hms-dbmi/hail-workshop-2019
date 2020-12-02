@@ -20,3 +20,4 @@ RUN mkdir -p ~/.jupyter && \
         echo '"allow_origin": "*"}}' >> ~/.jupyter/jupyter_notebook_config.json; \
     }
     
+# courtesy of Masahiro Kanai (@mkanai)

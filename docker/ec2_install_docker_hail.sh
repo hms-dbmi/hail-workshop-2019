@@ -1,4 +1,5 @@
 #!/bin/bash
+# courtesy of Masahiro Kanai (@mkanai)
 sudo yum update -y
 sudo amazon-linux-extras install -y docker
 sudo yum install -y docker tmux
